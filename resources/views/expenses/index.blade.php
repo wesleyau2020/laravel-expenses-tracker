@@ -52,6 +52,7 @@
                                     <th class="sorting">Name</th>
                                     <th class="sorting">Category</th>
                                     <th class="sorting">Amount</th>
+                                    <th class="sorting">Remarks</th>
                                     <th class="sorting">Date</th>
                                     <th class="sorting">Actions</th>
                                 </tr>
@@ -100,8 +101,14 @@
                         name: 'category'
                     },
                     {
-                        data: 'amount',
-                        name: 'amount'
+                        data: function (row) {
+                            return "$" + row.amount;
+                        },
+                        name: 'amount',
+                    },
+                    {
+                        data: 'remarks',
+                        name: 'remarks',
                     },
                     {
                         data: function (row) {
@@ -114,10 +121,9 @@
                         name: 'action',
                         orderable: false,
                         searchable: false,
-                        // width: '10%'
                     }
                 ],
-                order: [[3, 'desc']]
+                order: [[3, 'desc']],
             });
 
             renderExpensesChart();

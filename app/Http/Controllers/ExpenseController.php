@@ -18,10 +18,15 @@ class ExpenseController extends Controller
             return DataTables::of($expenses)
                 ->addColumn('action', function ($expense) {
                     return '
-                        <a href="' . route('expenses.edit', $expense->id) . '" class="btn btn-warning btn-sm">Edit</a>
-                        <button class="btn btn-danger btn-sm" onclick="deleteExpense(' . $expense->id . ')">Delete</button>
+                        <a href="' . route('expenses.edit', $expense->id) . '" class="btn btn-warning btn-sm">
+                            <i class="fa fa-edit"></i> Edit
+                        </a>
+                        <button class="btn btn-danger btn-sm" onclick="deleteExpense(' . $expense->id . ')">
+                            <i class="fa fa-trash"></i> Delete
+                        </button>
                     ';
                 })
+                ->rawColumns(['action'])
                 ->make(true);
         } else {
             $expenses = Expense::select('*')->get();
