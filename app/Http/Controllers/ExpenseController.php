@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Expense; // Import the Expense model
+use App\Models\Expense;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Yajra\DataTables\DataTables;
@@ -18,10 +18,15 @@ class ExpenseController extends Controller
             return DataTables::of($expenses)
                 ->addColumn('action', function ($expense) {
                     return '
-                        <a href="' . route('expenses.edit', $expense->id) . '" class="btn btn-warning btn-sm">Edit</a>
-                        <button class="btn btn-danger btn-sm" onclick="deleteExpense(' . $expense->id . ')">Delete</button>
+                        <a href="' . route('expenses.edit', $expense->id) . '" class="btn btn-warning btn-sm">
+                            <i class="fa fa-edit"></i> Edit
+                        </a>
+                        <button class="btn btn-danger btn-sm" onclick="deleteExpense(' . $expense->id . ')">
+                            <i class="fa fa-trash"></i> Delete
+                        </button>
                     ';
                 })
+                ->rawColumns(['action'])
                 ->make(true);
         } else {
             $expenses = Expense::select('*')->get();
@@ -32,10 +37,10 @@ class ExpenseController extends Controller
                 ->groupBy('month', 'category')
                 ->orderBy('month')
                 ->get();
-    
+
             $categories = config('global.categories');
             $monthlyData = [];
-        
+
             foreach ($categories as $category) {
                 $monthlyData[$category] = [];
                 for ($month = 1; $month <= 12; $month++) {
@@ -47,7 +52,7 @@ class ExpenseController extends Controller
 
             // Log::info("ExpenseController expensesGrouped", [$expensesGrouped]);
             // Log::info("ExpenseController monthlyData", [$monthlyData]);
-    
+
             return view('expenses.index', compact('expenses', 'expensesGrouped', 'monthlyData', 'categories'));
         }
     }
@@ -107,8 +112,8 @@ class ExpenseController extends Controller
     // Remove the specified expense from storage
     public function destroy(Expense $expense)
     {
-        Log::info("ExpenseController destroy", [$expense]);
+        // Log::info("ExpenseController destroy", [$expense]);
         $expense->delete();
         return redirect()->route('expenses.index')->with('success', 'Expense deleted successfully.');
-    }    
+    }
 }

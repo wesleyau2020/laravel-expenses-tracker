@@ -7,8 +7,8 @@
             <a class="fw-semibold text-white tracking-wide" href="/">
                 <span class="smini-visible">
                 </span>
-                <span class="smini-hidden">
-                    Laravel
+                <span class="smini-hidden fs-sm">
+                    {{ config('app.name') }}
                 </span>
             </a>
             <!-- END Logo -->
@@ -54,9 +54,9 @@
                             <i class="nav-main-link-icon fa fa-home"></i>
                             <span class="nav-main-link-name">Dashboard</span>
                         </a>
-                        <a class="nav-main-link" aria-haspopup="true" aria-expanded="true" href="/students">
-                            <i class="nav-main-link-icon fa fa-graduation-cap"></i>
-                            <span class="nav-main-link-name">Students</span>
+                        <a class="nav-main-link" aria-haspopup="true" aria-expanded="true" href="/expenses">
+                            <i class="nav-main-link-icon fa fa-wallet"></i>
+                            <span class="nav-main-link-name">Expenses</span>
                         </a>
                     </li>
                 </div>

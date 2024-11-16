@@ -49,7 +49,7 @@
             </div>
 
             <div class="mt-4">
-                <button type="submit" class="btn btn-primary btn-sm mt-4">Add Expense</button>
+                <button type="submit" class="btn btn-primary btn-sm">Add Expense</button>
                 <a href="{{ route('expenses.index') }}" class="btn btn-secondary btn-sm">Cancel</a>
             </div>
         </form>

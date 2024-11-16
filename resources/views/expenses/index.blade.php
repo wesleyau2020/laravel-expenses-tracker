@@ -1,6 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
+    @if (session('success'))
+        <div class="block block-rounded m-4">
+            <div class="alert alert-success alert-dismissible" role="alert">
+                <p class="mb-0"> {{ session('success') }}</p>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+    @endif
+
     <div class="block block-rounded m-4">
         <div class="block-header block-header-default">
             <h3 class="block-title">
@@ -9,7 +18,7 @@
         </div>
         <div class="block-content block-content-full">
             <!-- Container for ECharts -->
-            <div id="echart-bar" style="height: 400px;"></div> 
+            <div id="echart-bar" style="height: 400px;"></div>
         </div>
     </div>
 
@@ -52,6 +61,7 @@
                                     <th class="sorting">Name</th>
                                     <th class="sorting">Category</th>
                                     <th class="sorting">Amount</th>
+                                    <th class="sorting">Remarks</th>
                                     <th class="sorting">Date</th>
                                     <th class="sorting">Actions</th>
                                 </tr>
@@ -100,11 +110,17 @@
                         name: 'category'
                     },
                     {
-                        data: 'amount',
-                        name: 'amount'
+                        data: function(row) {
+                            return "$" + row.amount;
+                        },
+                        name: 'amount',
                     },
                     {
-                        data: function (row) {
+                        data: 'remarks',
+                        name: 'remarks',
+                    },
+                    {
+                        data: function(row) {
                             return moment(row.date).format('DD-MM-YYYY');
                         },
                         name: 'date'
@@ -114,10 +130,11 @@
                         name: 'action',
                         orderable: false,
                         searchable: false,
-                        // width: '10%'
                     }
                 ],
-                order: [[3, 'desc']]
+                order: [
+                    [3, 'desc']
+                ],
             });
 
             renderExpensesChart();
@@ -152,7 +169,10 @@
                 //     left: 'center'
                 // },
                 tooltip: {
-                    trigger: 'axis'
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'shadow'
+                    },
                 },
                 legend: {
                     data: categories,
@@ -191,7 +211,7 @@
                             _method: 'DELETE',
                             _token: '{{ csrf_token() }}',
                         },
-                        success: function (response) {
+                        success: function(response) {
                             Swal.fire({
                                 title: 'Deleted!',
                                 text: 'Your expense has been deleted.',
@@ -203,7 +223,7 @@
                                 }
                             });
                         },
-                        error: function (error) {
+                        error: function(error) {
                             Swal.fire(
                                 'Error!',
                                 'There was a problem deleting the expense.',
