@@ -11,4 +11,3 @@ Route::get('/dashboard', function () {
 
 // Expenses
 Route::resource('expenses', ExpenseController::class);
-// Route::delete('/expenses/{expense}', [ExpenseController::class, 'destroy'])->name('expenses.destroy');

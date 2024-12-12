@@ -112,7 +112,7 @@ class ExpenseController extends Controller
     // Remove the specified expense from storage
     public function destroy(Expense $expense)
     {
-        Log::info("ExpenseController destroy", [$expense]);
+        // Log::info("ExpenseController destroy", [$expense]);
         $expense->delete();
         return redirect()->route('expenses.index')->with('success', 'Expense deleted successfully.');
     }    

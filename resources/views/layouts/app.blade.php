@@ -27,6 +27,7 @@
 </head>
 
 <body>
+    <!-- Page Container -->
     <div id="page-container"
         class="sidebar sidebar-mini enable-page-overlay side-scroll page-header-fixed main-content side-trans-enabled">
         {{-- class="sidebar sidebar-mini enable-page-overlay side-scroll page-header-fixed main-content side-trans-enabled sidebar-o"> --}}
@@ -47,7 +48,6 @@
 
         <!-- Include Footer -->
         @include('partials.footer')
-
     </div>
     <!-- END Page Container -->
 

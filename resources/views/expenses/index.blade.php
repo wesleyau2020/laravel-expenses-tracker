@@ -158,7 +158,10 @@
                 //     left: 'center'
                 // },
                 tooltip: {
-                    trigger: 'axis'
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'shadow'  
+                    },
                 },
                 legend: {
                     data: categories,
