@@ -7,9 +7,17 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Yajra\DataTables\DataTables;
 use Carbon\Carbon;
+use App\Services\LogService;
 
 class ExpenseController extends Controller
 {
+    protected $logService;
+
+    public function __construct(LogService $logService)
+    {
+        $this->logService = $logService;
+    }
+
     // Display a listing of the expenses
     public function index(Request $request)
     {
@@ -78,6 +86,9 @@ class ExpenseController extends Controller
         ]);
 
         Expense::create($request->all());
+
+        // Log the activity
+        $this->logService->createLog('Expenses', "New expense added: " . $request->name);
 
         return redirect()->route('expenses.index')->with('success', 'Expense created successfully.');
     }
