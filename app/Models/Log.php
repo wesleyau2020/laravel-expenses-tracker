@@ -5,18 +5,22 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Expense extends Model
+class Log extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'name',
-        'amount',
-        'category',
-        'date',
+        'user_id',
+        'log_type',
+        'message',
     ];
 
     protected $casts = [
-        'date' => 'datetime',
+        'message' => 'array',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

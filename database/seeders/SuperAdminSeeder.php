@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use App\Models\Role;
 
-class UserSeeder extends Seeder
+class SuperAdminSeeder extends Seeder
 {
     /**
      * Run the database seeds.

@@ -1,4 +1,3 @@
-<!-- resources/views/partials/sidebar.blade.php -->
 <nav id="sidebar" aria-label="Main Navigation" class="">
     <!-- Side Header -->
     <div class="bg-header-dark">
@@ -6,6 +5,7 @@
             <!-- Logo -->
             <a class="fw-semibold text-white tracking-wide" href="/">
                 <span class="smini-visible">
+                    <i class="fa-solid fa-house ms-1"></i>
                 </span>
                 <span class="smini-hidden fs-sm">
                     {{ config('app.name') }}
@@ -50,13 +50,15 @@
                 <div class="">
                     {{-- <li class="nav-main-heading">Dashboard</li> --}}
                     <li class="nav-main-item">
-                        <a class="nav-main-link" aria-haspopup="true" aria-expanded="true" href="/dashboard">
-                            <i class="nav-main-link-icon fa fa-home"></i>
-                            <span class="nav-main-link-name">Dashboard</span>
-                        </a>
-                        <a class="nav-main-link" aria-haspopup="true" aria-expanded="true" href="/expenses">
+                        <a class="nav-main-link mt-2" aria-haspopup="true" aria-expanded="true" href="/expenses"
+                            title="View Expenses">
                             <i class="nav-main-link-icon fa fa-wallet"></i>
                             <span class="nav-main-link-name">Expenses</span>
+                        </a>
+                        <a class="nav-main-link" aria-haspopup="true" aria-expanded="true" href="/logs"
+                            title="View Logs">
+                            <i class="nav-main-link-icon fa fa-history"></i>
+                            <span class="nav-main-link-name">Logs</span>
                         </a>
                     </li>
                 </div>

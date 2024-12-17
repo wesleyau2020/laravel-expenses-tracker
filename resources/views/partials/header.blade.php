@@ -1,4 +1,3 @@
-<!-- resources/views/partials/header.blade.php -->
 <header id="page-header">
     <!-- Header Content -->
     <div class="content-header" style="">
@@ -10,15 +9,19 @@
                 <i class="fa fa-fw fa-bars"></i>
             </button>
             <!-- END Toggle Sidebar -->
-
-            <a class="fw-semibold text-default tracking-wide ms-4 fs-lg" href="/">
-                Welcome {{ Auth::user()->name }}!
-            </a>
         </div>
         <!-- END Left Section -->
 
         <!-- Right Section -->
         <div class="space-x-1">
+            <div class="dropdown d-inline-block">
+                <button type="button" class="btn btn-alt-secondary" id="page-header-user-dropdown"
+                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-fw fa-user"></i>
+                    <span class="d-none d-sm-inline-block">{{ Auth::user()->name }}</span>
+                </button>
+            </div>
+
             <!-- Change Password Button -->
             @if (Auth::user()->roles->contains('name', 'admin'))
                 <a href="/change-password" class="btn btn-alt-secondary">
