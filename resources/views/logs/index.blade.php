@@ -18,28 +18,6 @@
         </div>
         <div class="block-content block-content-full">
             <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
-                <div class="row">
-                    <div class="col-sm-12 col-md-6">
-                        <div class="dataTables_length" id="DataTables_Table_0_length">
-                            <label>
-                                <select name="DataTables_Table_0_length" aria-controls="DataTables_Table_0"
-                                    class="form-select">
-                                    <option value="5">5</option>
-                                    <option value="10">10</option>
-                                    <option value="20">20</option>
-                                </select>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6">
-                        <div id="DataTables_Table_0_filter" class="dataTables_filter">
-                            <label>
-                                <input type="search" class="form-control" placeholder="Search.."
-                                    aria-controls="DataTables_Table_0">
-                            </label>
-                        </div>
-                    </div>
-                </div>
                 <div class="row dt-row">
                     <div class="col-sm-12">
                         <table
@@ -69,10 +47,10 @@
             </div>
         </div>
     </div>
-@endsection
 
-<script>
-    $(document).ready(function() {
-        $('#logs-table').DataTable();
-    });
-</script>
+    <script>
+        $(document).ready(function() {
+            $('#logs-table').DataTable();
+        });
+    </script>
+@endsection

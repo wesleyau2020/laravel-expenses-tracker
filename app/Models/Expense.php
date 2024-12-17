@@ -9,7 +9,6 @@ class Expense extends Model
 {
     use HasFactory;
 
-    // Define the fillable properties
     protected $fillable = [
         'name',
         'amount',
