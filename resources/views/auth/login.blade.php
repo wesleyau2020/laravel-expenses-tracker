@@ -25,8 +25,9 @@
                 <div class="hero-static col-md-6 d-flex align-items-center bg-body-extra-light">
                     <div class="p-3 w-100">
                         <div class="mb-3 text-center">
-                            <a class="link-fx fw-bold fs-1" href="index.html">
-                                <span class="text-dark">Dash</span><span class="text-primary">mix</span>
+                            <a class="link-fx fw-bold fs-1" href="">
+                                <span class="text-dark">Expenses </span>
+                                <span class="text-primary">Tracker</span>
                             </a>
                             <p class="text-uppercase fw-bold fs-sm text-muted">Sign In</p>
                         </div>
@@ -67,15 +68,14 @@
                     </div>
                 </div>
 
-                {{-- Right content --}}
                 <div
                     class="hero-static col-md-6 d-none d-md-flex align-items-md-center justify-content-md-center text-md-center">
                     <div class="p-3">
                         <p class="display-4 fw-bold text-white mb-3">
-                            Welcome to the future
+                            {{-- Welcome to the future --}}
                         </p>
                         <p class="fs-lg fw-semibold text-white-75 mb-0">
-                            Copyright © <span data-toggle="year-copy" class="js-year-copy-enabled">2024</span>
+                            {{-- Copyright © <span data-toggle="year-copy" class="js-year-copy-enabled">2024</span> --}}
                         </p>
                     </div>
                 </div>

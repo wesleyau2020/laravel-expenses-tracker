@@ -54,11 +54,13 @@
                             <i class="nav-main-link-icon fa fa-home"></i>
                             <span class="nav-main-link-name">Dashboard</span>
                         </a>
-                        <a class="nav-main-link" aria-haspopup="true" aria-expanded="true" href="/expenses">
+                        <a class="nav-main-link" aria-haspopup="true" aria-expanded="true" href="/expenses"
+                            title="View Expenses">
                             <i class="nav-main-link-icon fa fa-wallet"></i>
                             <span class="nav-main-link-name">Expenses</span>
                         </a>
-                        <a class="nav-main-link" aria-haspopup="true" aria-expanded="true" href="/logs">
+                        <a class="nav-main-link" aria-haspopup="true" aria-expanded="true" href="/logs"
+                            title="View Logs">
                             <i class="nav-main-link-icon fa fa-history"></i>
                             <span class="nav-main-link-name">Logs</span>
                         </a>
