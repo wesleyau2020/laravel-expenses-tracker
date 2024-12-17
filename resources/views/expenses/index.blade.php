@@ -59,7 +59,6 @@
 
         // Chart Variables
         const categories = @json($categories);
-        const expensesGrouped = @json($expensesGrouped);
         const monthlyData = @json($monthlyData);
 
         $(document).ready(function() {

@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <main id="main-container py-0">
+    <main id="main-container">
         <div class="bg-image" style="background-image: url('{{ asset('dashmix/media/photos/photo22@2x.jpg') }}');">
             <div class="row g-0 bg-primary-op">
                 <div class="hero-static col-md-6 d-flex align-items-center bg-body-extra-light">

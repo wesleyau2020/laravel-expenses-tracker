@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Dashboard')</title>
+    <title>@yield('title', 'Expenses Tracker')</title>
 
     <!-- CSS -->
     <link href="{{ asset('dashmix/css/dashmix.min.css') }}" rel="stylesheet">
@@ -30,8 +30,7 @@
 <body>
     <!-- Page Container -->
     <div id="page-container"
-        class="sidebar sidebar-mini enable-page-overlay side-scroll page-header-fixed main-content side-trans-enabled">
-        {{-- class="sidebar sidebar-mini enable-page-overlay side-scroll page-header-fixed main-content side-trans-enabled sidebar-o"> --}}
+        class="sidebar-dark sidebar-mini enable-page-overlay side-scroll page-header-fixed main-content side-trans-enabled">
 
         <!-- Include Sidebar -->
         @include('partials.sidebar')

@@ -27,10 +27,10 @@ class ExpenseController extends Controller
                 ->addColumn('action', function ($expense) {
                     return '
                         <a href="' . route('expenses.edit', $expense->id) . '" class="btn btn-warning btn-sm">
-                            <i class="fa fa-edit"></i> Edit
+                            <i class="fa fa-edit"></i> 
                         </a>
                         <button class="btn btn-danger btn-sm" onclick="deleteExpense(' . $expense->id . ')">
-                            <i class="fa fa-trash"></i> Delete
+                            <i class="fa fa-trash"></i> 
                         </button>
                     ';
                 })
@@ -58,10 +58,7 @@ class ExpenseController extends Controller
                 }
             }
 
-            // Log::info("ExpenseController expensesGrouped", [$expensesGrouped]);
-            // Log::info("ExpenseController monthlyData", [$monthlyData]);
-
-            return view('expenses.index', compact('expenses', 'expensesGrouped', 'monthlyData', 'categories'));
+            return view('expenses.index', compact('expenses', 'monthlyData', 'categories'));
         }
     }
 
