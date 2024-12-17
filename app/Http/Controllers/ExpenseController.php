@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Expense; // Import the Expense model
+use App\Models\Expense;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Yajra\DataTables\DataTables;
@@ -37,10 +37,10 @@ class ExpenseController extends Controller
                 ->groupBy('month', 'category')
                 ->orderBy('month')
                 ->get();
-    
+
             $categories = config('global.categories');
             $monthlyData = [];
-        
+
             foreach ($categories as $category) {
                 $monthlyData[$category] = [];
                 for ($month = 1; $month <= 12; $month++) {
@@ -52,7 +52,7 @@ class ExpenseController extends Controller
 
             // Log::info("ExpenseController expensesGrouped", [$expensesGrouped]);
             // Log::info("ExpenseController monthlyData", [$monthlyData]);
-    
+
             return view('expenses.index', compact('expenses', 'expensesGrouped', 'monthlyData', 'categories'));
         }
     }
@@ -115,5 +115,5 @@ class ExpenseController extends Controller
         // Log::info("ExpenseController destroy", [$expense]);
         $expense->delete();
         return redirect()->route('expenses.index')->with('success', 'Expense deleted successfully.');
-    }    
+    }
 }

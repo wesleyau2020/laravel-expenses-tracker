@@ -7,8 +7,8 @@
             <a class="fw-semibold text-white tracking-wide" href="/">
                 <span class="smini-visible">
                 </span>
-                <span class="smini-hidden">
-                    Laravel
+                <span class="smini-hidden fs-sm">
+                    {{ config('app.name') }}
                 </span>
             </a>
             <!-- END Logo -->
