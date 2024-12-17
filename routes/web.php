@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ExpenseController;
+use App\Http\Controllers\LogController;
 
 Route::redirect('/', '/expenses');
 Route::get('/dashboard', function () {
@@ -21,4 +22,5 @@ Route::put('password', [UserController::class, 'updatePassword'])->name('passwor
 
 Route::middleware('auth')->group(function () {
     Route::resource('expenses', ExpenseController::class);
+    Route::get('/logs', [LogController::class, 'index'])->name('index');
 });
