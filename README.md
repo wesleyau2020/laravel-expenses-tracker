@@ -6,10 +6,6 @@ A Laravel-based web application for tracking and managing expenses. This app pro
 
 -   **eCharts Visualization**: Analyze expenses grouped by month and category for the current year.
 -   **Datatable Summary**: View a summary of all expenses using DataTables.
-    Open your browser and go to:
-    ```
-    http://127.0.0.1:8000
-    ```
 
 ## Application Routes
 
@@ -28,6 +24,6 @@ The app uses a custom logging service to track important actions like creating n
 
 ## Screenshots
 
-![Screenshot 1](screenshots/login.jpg)
-![Screenshot 2](screenshots/expenses.jpg)
-![Screenshot 3](screenshots/logs.jpg)
+![Screenshot 1](screenshots/login.png)
+![Screenshot 2](screenshots/expenses.png)
+![Screenshot 3](screenshots/logs.png)
