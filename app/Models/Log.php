@@ -19,7 +19,6 @@ class Log extends Model
         'message' => 'array',
     ];
 
-    // Define the relationship with the User model
     public function user()
     {
         return $this->belongsTo(User::class);

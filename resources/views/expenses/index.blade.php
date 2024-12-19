@@ -45,7 +45,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <!-- DataTables will fill this with data via AJAX -->
+                                <!-- Data will be rendered here via AJAX -->
                             </tbody>
                         </table>
                     </div>

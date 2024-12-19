@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 
 class LogController extends Controller
 {
-    // Display a listing of logs
     public function index()
     {
         $logs = Log::latest()->get();

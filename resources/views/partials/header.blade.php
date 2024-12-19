@@ -1,4 +1,3 @@
-<!-- resources/views/partials/header.blade.php -->
 <header id="page-header">
     <!-- Header Content -->
     <div class="content-header" style="">

@@ -1,4 +1,3 @@
-<!-- resources/views/partials/sidebar.blade.php -->
 <nav id="sidebar" aria-label="Main Navigation" class="">
     <!-- Side Header -->
     <div class="bg-header-dark">

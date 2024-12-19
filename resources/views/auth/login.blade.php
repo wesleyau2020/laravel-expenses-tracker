@@ -9,11 +9,15 @@
     <!-- CSS -->
     <link href="{{ asset('dashmix/css/dashmix.min.css') }}" rel="stylesheet">
 
-    <!-- JS -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
-    <script src="{{ asset('dashmix/js/dashmix.app.min.js') }}"></script>
+    <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+
+    {{-- Bootstrap --}}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+
+    {{-- Dashmix --}}
+    <script src="{{ asset('dashmix/js/dashmix.app.min.js') }}"></script>
 
     @stack('styles')
 </head>
@@ -50,7 +54,7 @@
                                         <button type="submit" class="btn w-100 btn-lg btn-hero btn-primary">
                                             <i class="fa fa-fw fa-sign-in-alt opacity-50 me-1"></i> Sign In
                                         </button>
-                                        {{-- <p class="mt-3 mb-0 d-lg-flex justify-content-lg-between d-none">
+                                        {{-- <p class="mt-3 mb-0 d-lg-flex justify-content-lg-between">
                                             <a class="btn btn-sm btn-alt-secondary d-block d-lg-inline-block mb-1"
                                                 href="{{ route('password.request') }}">
                                                 <i class="fa fa-exclamation-triangle opacity-50 me-1"></i> Forgot
