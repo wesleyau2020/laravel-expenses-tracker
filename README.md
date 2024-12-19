@@ -4,8 +4,10 @@ A Laravel-based web application for tracking and managing expenses. This app pro
 
 ## Features
 
--   **eCharts Visualization**: Analyze expenses grouped by month and category for the current year.
--   **Datatable Summary**: View a summary of all expenses using DataTables.
+-   **Data Visualization**: Analyze expenses grouped by month and category for the current year.
+-   **Expenses Summary**: View an index of all expenses.
+-   **Custom Log Service**: Log critical actions such as creating, editing, or deleting expenses.
+-   **Authentication**: Restrict access to expense management features to authenticated users only.
 
 ## Application Routes
 
@@ -17,10 +19,6 @@ A Laravel-based web application for tracking and managing expenses. This app pro
 -   **`GET /expenses/{expense}/edit`**: Form to edit an existing expense.
 -   **`PUT /expenses/{expense}`**: Update the details of an expense.
 -   **`DELETE /expenses/{expense}`**: Delete an expense.
-
-## Logging
-
-The app uses a custom logging service to track important actions like creating new expenses.
 
 ## Screenshots
 
