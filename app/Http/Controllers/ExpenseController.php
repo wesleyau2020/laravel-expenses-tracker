@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Expense;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
 use Yajra\DataTables\DataTables;
 use Carbon\Carbon;
 use App\Services\LogService;
@@ -22,7 +23,8 @@ class ExpenseController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $expenses = Expense::all();
+            $userId = Auth::id();
+            $expenses = Expense::select('*')->where("user_id", $userId)->get();
             return DataTables::of($expenses)
                 ->addColumn('action', function ($expense) {
                     return '
@@ -37,10 +39,13 @@ class ExpenseController extends Controller
                 ->rawColumns(['action'])
                 ->make(true);
         } else {
-            $expenses = Expense::select('*')->get();
+            $userId = Auth::id();
+            // Log::info("userId", [$userId]);
+            $expenses = Expense::select('*')->where("user_id", $userId)->get();
 
             $currentYear = Carbon::now()->year;
             $expensesGrouped = Expense::selectRaw('MONTH(date) as month, category, SUM(amount) as total_amount')
+                ->where("user_id", $userId)
                 ->whereYear('date', $currentYear)
                 ->groupBy('month', 'category')
                 ->orderBy('month')
